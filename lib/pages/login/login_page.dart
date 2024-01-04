@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:soticket/pages/dashboard/dashboard_page.dart';
-import 'package:soticket/pages/home/login/login_view_model.dart';
+import 'package:soticket/pages/login/login_view_model.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
   final viewModel = LoginViewModel();
   static const route = '/login';
-  void onLogin() {
+  void onLogin(BuildContext context) {
+    viewModel.authenticate(context);
     Modular.to.navigate(DashboardPage.route);
   }
 
@@ -51,7 +52,7 @@ class LoginPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: FilledButton(
-                    onPressed: onLogin,
+                    onPressed: () => onLogin(context),
                     child: const Text('Autenticar no sistema'),
                   ),
                 ),

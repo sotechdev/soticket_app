@@ -8,11 +8,8 @@ import 'package:soticket/pages/dashboard/sales/sales_page.dart';
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
   void goTo(String route) {
-    if (route == DashboardPage.route) {
-      Modular.to.navigate(route);
-    } else {
-      Modular.to.navigate('${DashboardPage.route}$route');
-    }
+    Modular.to.pop();
+    Modular.to.navigate(route);
   }
 
   @override

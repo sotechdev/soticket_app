@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:soticket/pages/dashboard/app_drawer.dart';
-import 'package:soticket/pages/core/settings/settings_page.dart';
+import 'package:soticket/pages/settings/settings_page.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
-  static const route = '/home';
+  static const route = '/';
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,7 @@ class DashboardPage extends StatelessWidget {
         icon: const Icon(Icons.settings),
         onPressed: () => Modular.to.pushNamed(SettingsPage.route),
       ),
+      body: RouterOutlet(),
     );
   }
 }
