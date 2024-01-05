@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:soticket/models/user.dart';
 
 class AuthStore extends ChangeNotifier {
-  bool _isLogged = false;
+  User? _user;
 
-  bool get isLogged => _isLogged;
+  bool get isLogged => _user != null;
+  User? get user => _user;
 
-  setLogged(bool logged) {
-    _isLogged = logged;
+  setUser(User? user) {
+    _user = user;
     notifyListeners();
   }
 }
